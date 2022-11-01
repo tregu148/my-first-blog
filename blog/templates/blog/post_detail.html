@@ -12,5 +12,10 @@
         {% endif %}
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
+        <form method ="POST" class="post-form">{% csrf_token %}
+            {{ post.amount }}
+            <button type="submit" name="plus_1_btn">Plus</button>
+            <button type="submit" name="minus_1_btn">Minus</button>
+        </form>
     </div>
 {% endblock %}
